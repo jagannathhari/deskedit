@@ -103,7 +103,7 @@ int main(int argc, char *argv[]) {
         // font = nk_font_atlas_add_from_file(atlas,"./font.ttf", 20*
         // font_scale,&config);
         font = nk_font_atlas_add_from_memory(
-            atlas, font_data, sizeof(font_data) / sizeof(font_data[0]),
+            atlas, (void *)font_data, sizeof(font_data) / sizeof(font_data[0]),
             25.0 * font_scale, &config);
         nk_sdl_font_stash_end();
         /* this hack makes the font appear to be scaled down to the desired
