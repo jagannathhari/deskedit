@@ -38,6 +38,9 @@ int main(int argc, char *argv[]) {
     int flags = 0;
     float font_scale = 2;
 
+
+
+    WinData windata;
     /* GUI */
     struct nk_context *ctx;
     struct nk_colorf bg;
@@ -113,6 +116,12 @@ int main(int argc, char *argv[]) {
         nk_style_set_font(ctx, &font->handle);
     }
 
+    //populating windata
+    windata.ctx = ctx;
+    windata.renderer = renderer;
+    windata.w = WINDOW_WIDTH;
+    windata.h = WINDOW_WIDTH;
+
     while (running) {
         /* Input */
         SDL_Event evt;
@@ -125,7 +134,7 @@ int main(int argc, char *argv[]) {
         nk_input_end(ctx);
 
         /* GUI */
-        main_ui(ctx, WINDOW_WIDTH, WINDOW_HEIGHT);
+        main_ui(&windata);
         SDL_RenderClear(renderer);
 
         nk_sdl_render(NK_ANTI_ALIASING_ON);

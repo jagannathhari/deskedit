@@ -2,7 +2,15 @@
 #define MAIN_UI_H
 #ifndef NK_NUKLEAR_H_
 #include <nuklear.h>
+#include <SDL.h>
 #endif
-void main_ui(struct nk_context *ctx, int w, int h);
+typedef struct {
+    struct nk_context *ctx;
+    SDL_Renderer *renderer;
+    int w;
+    int h;
+}WinData;
+
+void main_ui(WinData *windata);
 
 #endif // MAIN_UI_H

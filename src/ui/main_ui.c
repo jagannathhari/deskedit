@@ -26,10 +26,10 @@ void generate_desktop_file(DesktopFile desktop_entry){
     //todo
 }
 
-void main_ui(struct nk_context *ctx, int w, int h) {
+void main_ui(WinData *windata) {
     static DesktopFile desktop_entry;
-
-    if (nk_begin(ctx, "DeskEdit", nk_rect(0, 0, w, h),
+    struct nk_context *ctx = windata->ctx;
+    if (nk_begin(ctx, "DeskEdit", nk_rect(0, 0, windata->w, windata->h),
                  NK_WINDOW_NO_SCROLLBAR)) {
 
         nk_layout_row_begin(ctx, NK_DYNAMIC, 0, 2);
