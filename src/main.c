@@ -27,8 +27,8 @@
 #include <ui/main_ui.h>
 
 #define WINDOW_WIDTH 500
-#define WINDOW_HEIGHT 370
-#define TITLE "Nuklear GUI"
+#define WINDOW_HEIGHT 300 
+#define TITLE "DeskEdit"
 int main(int argc, char *argv[]) {
 
     /* Platform */
