@@ -7,6 +7,7 @@
 typedef struct {
     struct nk_context *ctx;
     SDL_Renderer *renderer;
+    SDL_Texture *browse_icon; 
     int w;
     int h;
 }WinData;

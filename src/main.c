@@ -24,10 +24,11 @@
 #include <nuklear_sdl_renderer.h>
 
 #include "./resources.c"
-#include <ui/main_ui.h>
+#include "ui/main_ui.h"
+#include "stb_to_sdl.h"
 
 #define WINDOW_WIDTH 500
-#define WINDOW_HEIGHT 300 
+#define WINDOW_HEIGHT 500 
 #define TITLE "DeskEdit"
 int main(int argc, char *argv[]) {
 
@@ -121,6 +122,7 @@ int main(int argc, char *argv[]) {
     windata.renderer = renderer;
     windata.w = WINDOW_WIDTH;
     windata.h = WINDOW_WIDTH;
+    windata.browse_icon = image_load_memory(icon,sizeof(icon),renderer);
 
     while (running) {
         /* Input */
