@@ -103,12 +103,12 @@ void main_ui(WinData *windata) {
         CUSTOM_LAYOUT_ROW_TEMPLATE(ctx,0,LABEL_WIDTH_MIN)
         nk_label(ctx, "Mime Type:", NK_TEXT_CENTERED | NK_TEXT_LEFT);
         nk_edit_string_zero_terminated(
-            ctx, NK_EDIT_FIELD, desktop_entry.generic_name, NAME_MAX, NULL);
+            ctx, NK_EDIT_FIELD, desktop_entry.mime_type, NAME_MAX, NULL);
 
 
         CUSTOM_LAYOUT_ROW_TEMPLATE(ctx,0,LABEL_WIDTH_MIN)
         nk_label(ctx, "Working dir: ", NK_TEXT_CENTERED | NK_TEXT_LEFT);
-        nk_edit_string_zero_terminated(ctx, NK_EDIT_FIELD, desktop_entry.name,
+        nk_edit_string_zero_terminated(ctx, NK_EDIT_FIELD, desktop_entry.working_dir,
                                        NAME_MAX, NULL);
 
         CUSTOM_LAYOUT_ROW_TEMPLATE(ctx,0,LABEL_WIDTH_MIN)
@@ -118,7 +118,7 @@ void main_ui(WinData *windata) {
 
               nk_layout_row_dynamic(ctx, 0, 1);
         nk_checkbox_label(ctx,"Run In Terminal", &desktop_entry.terminal);
-        nk_checkbox_label(ctx,"Startup Notify", &desktop_entry.terminal);
+        nk_checkbox_label(ctx,"Startup Notify", &desktop_entry.startup_notify);
 
        
         nk_layout_space_end(ctx);

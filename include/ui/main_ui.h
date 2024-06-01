@@ -21,7 +21,10 @@ typedef struct {
     char icon[PATH_MAX + 1];
     char comment[NAME_MAX + 1];
     char generic_name[NAME_MAX + 1];
+    char working_dir[PATH_MAX + 1];
+    char mime_type[NAME_MAX + 1];
     nk_bool terminal;
+    nk_bool startup_notify;
 }DesktopFile;
 
 void main_ui(WinData *windata);
