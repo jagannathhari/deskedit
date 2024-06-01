@@ -1,4 +1,3 @@
-
 #include "ui/main_ui.h"
 #include <linux/limits.h>
 #include <stdio.h>
@@ -31,14 +30,6 @@
     nk_layout_row_template_push_static(ctx,icon_size);\
     nk_layout_row_template_end(ctx);\
 
-typedef struct {
-    char name[NAME_MAX + 1];
-    char command[PATH_MAX + 1];
-    char icon[PATH_MAX + 1];
-    char comment[NAME_MAX + 1];
-    char generic_name[NAME_MAX + 1];
-    nk_bool terminal;
-} DesktopFile;
 
 int check_required(DesktopFile desktop_entry) {
     if (desktop_entry.name[0] == '\0') {
